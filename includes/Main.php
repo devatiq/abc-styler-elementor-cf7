@@ -92,6 +92,11 @@ class ABCCF7STYLER {
         // registser the deactivation
         register_deactivation_hook(__FILE__, [$this, 'deactivate']);
 
+        // Enqueue CSS file here
+       // add_action( 'elementor/frontend/after_enqueue_styles', [ $this, 'abccf7_enqueue_styles' ] );
+
+        // Register your styles
+        add_action( 'wp_enqueue_scripts', [ $this, 'abccf7_enqueue_styles' ] );
 	}
 
 	
@@ -110,51 +115,25 @@ class ABCCF7STYLER {
         define( 'ABC_CF7_STYLER_VERSION', $this->version );
         define( 'ABC_CF7_STYLER_MINIMUM_ELEMENTOR_VERSION', self::MINIMUM_ELEMENTOR_VERSION );
         define( 'ABC_CF7_STYLER_MINIMUM_PHP_VERSION', self::MINIMUM_PHP_VERSION );
-        define('ABCCF7_NAME', 'ABC CF7 Styler for Elementor');
-        
+        define('ABCCF7_NAME', 'ABC CF7 Styler for Elementor');       
 
-        // Define ABC_CF7_STYLER_PLUGIN_FILE.
-        if ( ! defined( 'ABC_CF7_STYLER_PLUGIN_FILE' ) ) {
-            define( 'ABC_CF7_STYLER_PLUGIN_FILE', __FILE__ );
-        }
-        // Define ABC_CF7_STYLER_PLUGIN_DIR.
-        if ( ! defined( 'ABC_CF7_STYLER_PLUGIN_DIR' ) ) {
-            define( 'ABC_CF7_STYLER_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-        }
-        // Define ABC_CF7_STYLER_PLUGIN_URL.
-        if ( ! defined( 'ABC_CF7_STYLER_PLUGIN_URL' ) ) {
-            define( 'ABC_CF7_STYLER_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-        }
-        // Define ABC_CF7_STYLER_PLUGIN_BASENAME.
-        if ( ! defined( 'ABC_CF7_STYLER_PLUGIN_BASENAME' ) ) {
-            define( 'ABC_CF7_STYLER_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
-        }
-        // Define ABC_CF7_STYLER_VERSION.
-        if ( ! defined( 'ABC_CF7_STYLER_VERSION' ) ) {
-            define( 'ABC_CF7_STYLER_VERSION', '1.0' );
-        }
-        // Define ABC_CF7_STYLER_TEXT_DOMAIN.
-        if ( ! defined( 'ABC_CF7_STYLER_TEXT_DOMAIN' ) ) {
-            define( 'ABC_CF7_STYLER_TEXT_DOMAIN', 'abccf7' );
-        }
-        // Define ABC_CF7_STYLER_ASSETS_DIR.
-        if ( ! defined( 'ABC_CF7_STYLER_ASSETS_DIR' ) ) {
-            define( 'ABC_CF7_STYLER_ASSETS_DIR', ABC_CF7_STYLER_PLUGIN_DIR . 'assets/' );
-        }
-        // Define ABC_CF7_STYLER_ASSETS_URL.
-        if ( ! defined( 'ABC_CF7_STYLER_ASSETS_URL' ) ) {
-            define( 'ABC_CF7_STYLER_ASSETS_URL', ABC_CF7_STYLER_PLUGIN_URL . 'assets/' );
-        }
-        // Define ABC_CF7_STYLER_INCLUDES_DIR.
-        if ( ! defined( 'ABC_CF7_STYLER_INCLUDES_DIR' ) ) {
-            define( 'ABC_CF7_STYLER_INCLUDES_DIR', ABC_CF7_STYLER_PLUGIN_DIR . 'includes/' );
-        }
-        // Define ABC_CF7_STYLER_INCLUDES_URL.
-        if ( ! defined( 'ABC_CF7_STYLER_INCLUDES_URL' ) ) {
-            define( 'ABC_CF7_STYLER_INCLUDES_URL', ABC_CF7_STYLER_PLUGIN_URL . 'includes/' );
-        }
      }
- 
+
+     /**
+     * Enqueue custom Js/CSS styles.
+     *
+     * @since 1.0.0
+     * @access public
+     */
+    public function abccf7_enqueue_styles() {
+        wp_enqueue_style(
+            'abccf7styler-custom-styles', // Unique handle for your stylesheet
+            ABC_CF7_STYLER_PLUGIN_URL . '/assets/css/style.css', // URL to your style.css file
+            [], // Dependencies 
+            ABC_CF7_STYLER_VERSION, // Version number
+            'all' // Media type
+        );
+    }
 	/**
 	 * Compatibility Checks
 	 *
@@ -328,10 +307,10 @@ class ABCCF7STYLER {
     public function register_widgets($widgets_manager) {
 
 		// Include Widget configurations
-		require_once ABC_CF7_STYLER_PLUGIN_DIR . '/BaseWidgets.php'; 
+		require_once ABC_CF7_STYLER_PLUGIN_DIR . '/includes/BaseWidgets.php'; 
 
         // Include Widget configurations      
-		require_once ABC_CF7_STYLER_PLUGIN_DIR . '/Widgets/Main.php';        
+		require_once ABC_CF7_STYLER_PLUGIN_DIR . '/includes/Widgets/Main.php';        
         
         $widgets_manager->register(new \includes\Widgets\ABCCF7\Main());
         

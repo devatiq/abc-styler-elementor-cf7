@@ -18,12 +18,35 @@ Elementor Pro tested up to: 3.16.3
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 
+// Define ABC_CF7_STYLER_PLUGIN_FILE.
+if (!defined('ABC_CF7_STYLER_PLUGIN_FILE')) {
+    define('ABC_CF7_STYLER_PLUGIN_FILE', __FILE__);
+}
+// Define ABC_CF7_STYLER_PLUGIN_DIR.
+if (!defined('ABC_CF7_STYLER_PLUGIN_DIR')) {
+    define('ABC_CF7_STYLER_PLUGIN_DIR', plugin_dir_path(__FILE__));
+}
+// Define ABC_CF7_STYLER_PLUGIN_URL.
+if (!defined('ABC_CF7_STYLER_PLUGIN_URL')) {
+    define('ABC_CF7_STYLER_PLUGIN_URL', plugins_url('', __FILE__));
+}
+// Define ABC_CF7_STYLER_PLUGIN_BASENAME.
+if (!defined('ABC_CF7_STYLER_PLUGIN_BASENAME')) {
+    define('ABC_CF7_STYLER_PLUGIN_BASENAME', plugin_basename(__FILE__));
+}
+
+// Define ABC_CF7_STYLER_TEXT_DOMAIN.
+if (!defined('ABC_CF7_STYLER_TEXT_DOMAIN')) {
+    define('ABC_CF7_STYLER_TEXT_DOMAIN', 'abccf7');
+}
+
 
 // abcf7 plugin general init
-function abcf7_plugin_general_init() {
+function abcf7_plugin_general_init()
+{
 
     // Check if the plugin is active
-    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+    include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 
     if (is_plugin_active('contact-form-7/wp-contact-form-7.php')) {
         // Load Main plugin class
@@ -36,16 +59,17 @@ function abcf7_plugin_general_init() {
         // Contact Form 7 is not active, display admin notice
         add_action('admin_notices', 'abccf7_admin_notice');
 
-        function abccf7_admin_notice() {
+        function abccf7_admin_notice()
+        {
             // contact form 7 download link
             $url = 'https://wordpress.org/plugins/contact-form-7/';
             $link = sprintf(
                 /* translators: 1: Plugin Name 2: Elementor */
-                esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'ABC_CF7_STYLER_TEXT_DOMAIN'),
-                '<strong>' . esc_html__('ABC Contact Form 7 Styler for Elementor', 'ABC_CF7_STYLER_TEXT_DOMAIN') . '</strong>',
-                '<strong><a href="' . $url . '" target="_blank">' . esc_html__('Contact Form 7', 'ABC_CF7_STYLER_TEXT_DOMAIN') . '</a></strong>'
+                esc_html__('"%1$s" requires "%2$s" to be installed and activated.', ABC_CF7_STYLER_TEXT_DOMAIN),
+                '<strong>' . esc_html__('ABC Contact Form 7 Styler for Elementor', ABC_CF7_STYLER_TEXT_DOMAIN) . '</strong>',
+                '<strong><a href="' . $url . '" target="_blank">' . esc_html__('Contact Form 7', ABC_CF7_STYLER_TEXT_DOMAIN) . '</a></strong>'
             );
-            
+
             echo '<div class="notice notice-warning is-dismissible"><p>';
             echo $link;
             echo '</p></div>';
