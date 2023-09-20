@@ -82,6 +82,48 @@ class Main extends BaseWidget
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
+        // contact form 7 label typography
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'abc_ele_cf7_label_typography',
+                'label' => __('Label Typography', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'selector' => '{{WRAPPER}} #abc-ele-contact-form-wrapper form label',
+            ]
+        );
+        // contact form 7 label text color
+        $this->add_control(
+            'abc_ele_cf7_label_text_color',
+            [
+                'label' => __('Label Text Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} #abc-ele-contact-form-wrapper form label' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        // contact form 7 input field gap
+        $this->add_responsive_control(
+            'abc_ele_cf7_input_gap',
+            [
+                'label' => __('Input Gap', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px', '%'],
+                'range' => [
+                    'px' => [
+                        'min' => 5,
+                        'max' => 50,
+                    ],
+                    '%' => [
+                        'min' => 1,
+                        'max' => 100,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} #abc-ele-contact-form-wrapper form label' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
         // contact form 7 input field height
         $this->add_responsive_control(
             'abc_ele_cf7_input_height',
