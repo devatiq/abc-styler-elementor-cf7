@@ -1,6 +1,6 @@
 === ABC Contact Form 7 Styler for Elementor ===
 Contributors: supreoxltd, hmbashar
-Donate link: https://www.buymeacoffee.com/hmbashar
+Donate link: https://www.paypal.com/donate/?hosted_button_id=AFMAVLDRP26K4
 Tags: Form Style, Contact Form 7 addon, Elementor addon, Form Customization, Form Design, Form Layout, User-Friendly Forms, Contact Form Styling
 Requires at least: 4.7
 Tested up to: 6.3.1
