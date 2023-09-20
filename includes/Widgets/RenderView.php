@@ -14,6 +14,13 @@
  $shortcode = sprintf( '[contact-form-7 %s]', $this->get_render_attribute_string( 'shortcode' ) );
 
 ?>
+<script>
+    jQuery(document).ready(function($) {
+    // Find all form fields within the wrapper class
+    $('#abc-ele-contact-form-wrapper input[type="submit"].wpcf7-form-control.wpcf7-submit').parent('p').addClass('abc-ele-contact-form-submit');
+});
+
+</script>
      <div <?php echo $this->get_render_attribute_string('abc_ele_contact_form_attr'); ?>>
          <?php
              if( !empty( $settings['abc_ele_contact_form_shortcode'] ) ){

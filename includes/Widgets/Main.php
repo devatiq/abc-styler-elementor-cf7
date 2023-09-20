@@ -11,7 +11,7 @@ class Main extends BaseWidget
 
     // define protected variables...
     protected $name = 'ABC-ABCCF7';
-    protected $title = 'Contact Form 7';
+    protected $title = 'ABC Contact Form 7';
     protected $icon = 'eicon-form-horizontal';
     protected $categories = [
         'basic'
@@ -108,6 +108,32 @@ class Main extends BaseWidget
                 ],
             ]
         );
+        // contact form 7 input field width
+        $this->add_responsive_control(
+            'abc_ele_cf7_input_width',
+            [
+                'label' => __('Width', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px', 'em', '%'],
+                'range' => [
+                    'px' => [
+                        'min' => 50,
+                        'max' => 500,
+                    ],
+                    'em' => [
+                        'min' => 1,
+                        'max' => 10,
+                    ],
+                    '%' => [
+                        'min' => 1,
+                        'max' => 100,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap input' => 'width: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
         // contact form 7 input field border
         $this->add_group_control(
             Group_Control_Border::get_type(),
@@ -116,7 +142,7 @@ class Main extends BaseWidget
                 'label' => __('Border', ABC_CF7_STYLER_TEXT_DOMAIN),
                 'selector' => '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap input',
             ]
-        );
+        );        
         // contact form 7 input field border radius
         $this->add_responsive_control(
             'abc_ele_cf7_input_border_radius',
@@ -161,6 +187,53 @@ class Main extends BaseWidget
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap input' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        // contact form 7 input field background color
+        $this->add_control(
+            'abc_ele_cf7_input_bg_color',
+            [
+                'label' => __('Background Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap input' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+        // contact form 7 input field placeholder color
+        $this->add_control(
+            'abc_ele_cf7_input_placeholder_color',
+            [
+                'label' => __('Placeholder Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap input::-webkit-input-placeholder' => 'color: {{VALUE}};',
+                    '{{WRAPPER}}  #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap input::-moz-placeholder' => 'color: {{VALUE}};',
+                    '{{WRAPPER}}  #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap input:-ms-input-placeholder' => 'color: {{VALUE}};',
+                    '{{WRAPPER}}  #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap input::placeholder' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        // contact form 7 input field focus text color
+        $this->add_control(
+            'abc_ele_cf7_input_focus_text_color',
+            [
+                'label' => __('Focus Text Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}}  #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap input:focus' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        // contact form 7 input field focus background color
+        $this->add_control(
+            'abc_ele_cf7_input_focus_bg_color',
+            [
+                'label' => __('Focus Background Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}}  #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap input:focus' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -284,6 +357,33 @@ class Main extends BaseWidget
                 ],
             ]
         );
+        // contact form 7 textarea field background color
+        $this->add_control(
+            'abc_ele_cf7_textarea_bg_color',
+            [
+                'label' => __('Background Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap textarea' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+        // contact form 7 textarea field placeholder color
+        $this->add_control(
+            'abc_ele_cf7_textarea_placeholder_color',
+            [
+                'label' => __('Placeholder Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}}  #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap textarea::-webkit-input-placeholder' => 'color: {{VALUE}};',
+                    '{{WRAPPER}}  #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap textarea::-moz-placeholder' => 'color: {{VALUE}};',
+                    '{{WRAPPER}}  #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap textarea:-ms-input-placeholder' => 'color: {{VALUE}};',
+                    '{{WRAPPER}}  #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap textarea::placeholder' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        
 
         // end of Contact Form textarea style section
         $this->end_controls_section();
@@ -294,6 +394,32 @@ class Main extends BaseWidget
             [
                 'label' => __('Submit Button', ABC_CF7_STYLER_TEXT_DOMAIN),
                 'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+        // contact form 7 submit button alignment
+        $this->add_responsive_control(
+            'abc_ele_cf7_submit_button_alignment',
+            [
+                'label' => __('Alignment', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    'left' => [
+                        'title' => __('Left', ABC_CF7_STYLER_TEXT_DOMAIN),
+                        'icon' => 'eicon-text-align-left',
+                    ],
+                    'center' => [
+                        'title' => __('Center', ABC_CF7_STYLER_TEXT_DOMAIN),
+                        'icon' => 'eicon-text-align-center',
+                    ],
+                    'right' => [
+                        'title' => __('Right', ABC_CF7_STYLER_TEXT_DOMAIN),
+                        'icon' => 'eicon-text-align-right',
+                    ],
+                ],
+                'default' => 'left',
+                'selectors' => [
+                    '{{WRAPPER}} #abc-ele-contact-form-wrapper .abc-ele-contact-form-submit' => 'text-align: {{VALUE}};',
+                ],
             ]
         );
         // contact form 7 submit button field typography

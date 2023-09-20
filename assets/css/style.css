@@ -1,4 +1,3 @@
-
 /*----------------------------------------------
  * Contact Form
  * ---------------------------------------------*/
@@ -10,12 +9,12 @@
     gap: 20px;
 }
 
-#abc-ele-contact-field {
+.abc-ele-contact-field {
     flex-basis: 50%;
 }
 
-#abc-ele-contact-field input,
-#abc-ele-contact-field textarea {
+.abc-ele-contact-field input,
+.abc-ele-contact-field textarea {
     border-radius: 3px;
     border: 1px solid rgba(0, 0, 0, 0.10);
     background: #FFF;
@@ -42,8 +41,10 @@
     flex-basis: 200px;
     text-align: left;
 }
-
-#abc-ele-contact-field.abc-ele-contact-form-submit input {
+#abc-ele-contact-form-wrapper label {
+    display: block;
+}
+#abc-ele-contact-field.abc-ele-contact-form-submit input, #abc-ele-contact-form-wrapper input[type="submit"] {
     font-family: "Roboto", Sans-serif;
     font-size: 15px;
     font-weight: 500;
@@ -52,7 +53,7 @@
     border-width: 0px 0px 0px 5px;
     border-color: #FE4D05;
     border-radius: 0px 0px 0px 0px;
-    padding: 20px 43px 20px 43px;
+    padding: 20px 70px 20px 70px;
     background-color: #448E08;
     color: #fff;
     margin-top: 20px;
@@ -62,7 +63,7 @@
     margin-bottom: 0;
 }
 
-#abc-ele-contact-field.abc-ele-contact-form-submit input:hover {
+#abc-ele-contact-field.abc-ele-contact-form-submit input:hover, #abc-ele-contact-form-wrapper input[type="submit"]:hover {
     border-color: #448E08;
     background-color: #FE4D05;
 }
