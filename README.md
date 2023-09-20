@@ -1,14 +1,15 @@
 # ABC Contact Form 7 Styler for Elementor
 
-Contributors: supreoxltd
-Donate link: [Buy Me A Coffee](https://www.paypal.com/donate/?hosted_button_id=AFMAVLDRP26K4)
-Tags: Form Style, Contact Form 7 addon, Elementor addon, Form Customization, Form Design, Form Layout, User-Friendly Forms, Contact Form Styling
-Requires at least: 4.7
-Tested up to: 6.3.1
-Stable tag: 1.0
-Requires PHP: 7.4
-License: GPLv2 or later
+Contributors: supreoxltd  
+Donate link: [Buy Me A Coffee](https://www.paypal.com/donate/?hosted_button_id=AFMAVLDRP26K4)  
+Tags: Form Style, Contact Form 7 addon, Elementor addon, Form Customization, Form Design, Form Layout, User-Friendly Forms, Contact Form Styling  
+Requires at least: 4.7  
+Tested up to: 6.3.1  
+Stable tag: 1.0  
+Requires PHP: 7.4  
+License: GPLv2 or later  
 License URI: [GPL-2.0](https://www.gnu.org/licenses/gpl-2.0.html)
+
 
 Seamlessly integrate and enhance your Elementor-powered WordPress website with the Elementor ABC Contact Form 7 Integration Plugin. This powerful extension simplifies the process of integrating Contact Form 7 forms into your Elementor designs, offering advanced styling options and flexible customization. Elevate your contact forms with ease and style.
 
