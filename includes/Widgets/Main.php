@@ -17,9 +17,18 @@ class Main extends BaseWidget
         'basic'
     ];
     protected $keywords = [
-        'contact form 7', 'cf7', 'contact form', 'form', 'contact', 'abc contact form 7', 'abc cf7', 'abc contact form', 'abc form', 'abc contact'
+        'contact form 7',
+        'cf7',
+        'contact form',
+        'form',
+        'contact',
+        'abc contact form 7',
+        'abc cf7',
+        'abc contact form',
+        'abc form',
+        'abc contact'
     ];
-  
+
 
     /**
      * Get Contact Form 7 Shortcodes
@@ -27,15 +36,16 @@ class Main extends BaseWidget
      *
      * @return array
      */
-    private function get_contact_form_shortcodes() {
+    private function get_contact_form_shortcodes()
+    {
         $formlist = array();
-        $forms_args = array( 'posts_per_page' => -1, 'post_type'=> 'wpcf7_contact_form' );
-        $forms = get_posts( $forms_args );
-        if( $forms ){
-            foreach ( $forms as $form ){
+        $forms_args = array('posts_per_page' => -1, 'post_type' => 'wpcf7_contact_form');
+        $forms = get_posts($forms_args);
+        if ($forms) {
+            foreach ($forms as $form) {
                 $formlist[$form->ID] = $form->post_title;
             }
-        }else{
+        } else {
             $formlist['0'] = esc_html__('Form not found', ABC_CF7_STYLER_TEXT_DOMAIN);
         }
         return $formlist;
@@ -69,7 +79,7 @@ class Main extends BaseWidget
                 'type' => Controls_Manager::SELECT,
                 'options' => $this->get_contact_form_shortcodes(),
             ]
-        );    
+        );
 
         // end of Contact form section
         $this->end_controls_section();
@@ -184,7 +194,7 @@ class Main extends BaseWidget
                 'label' => __('Border', ABC_CF7_STYLER_TEXT_DOMAIN),
                 'selector' => '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap input',
             ]
-        );        
+        );
         // contact form 7 input field border radius
         $this->add_responsive_control(
             'abc_ele_cf7_input_border_radius',
@@ -425,10 +435,69 @@ class Main extends BaseWidget
             ]
         );
 
-        
+
 
         // end of Contact Form textarea style section
         $this->end_controls_section();
+
+
+        //Contact Form radio field style section
+        $this->start_controls_section(
+            'abc_elementor_cf7_radio_style_setting',
+            [
+                'label' => __('Radio', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+        // contact form 7 radio field label typography
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'abc_ele_cf7_radio_label_typography',
+                'label' => __('Typography', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'selector' => '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap label',
+
+            ]
+        );
+        // contact form 7 radio field label color
+        $this->add_control(
+            'abc_ele_cf7_radio_label_color',
+            [
+                'label' => __('Label Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap label' => 'color: {{VALUE}};',
+                ]
+            ]
+        );
+        // contact form 7 radio field label gap
+        $this->add_responsive_control(
+            'abc_ele_cf7_radio_label_gap',
+            [
+                'label' => __('Gap', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px', 'em', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap label' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+                ]
+            ]
+        );
+        // contact form 7 radio size
+        $this->add_responsive_control(
+            'abc_ele_cf7_radio_size',
+            [
+                'label' => __('Size', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px', 'em', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap label' => 'font-size: {{SIZE}}{{UNIT}};',
+                ]
+            ]
+        );
+
+        // end of Contact Form radio field label
+        $this->end_controls_section();
+
 
         //Contact Form submit button style section
         $this->start_controls_section(
@@ -528,7 +597,7 @@ class Main extends BaseWidget
                 'label' => __('Border', ABC_CF7_STYLER_TEXT_DOMAIN),
                 'selector' => '{{WRAPPER}} #abc-ele-contact-form-wrapper input[type="submit"].wpcf7-form-control.wpcf7-submit',
             ]
-        );  
+        );
         // contact form 7 submit button field border radius
         $this->add_responsive_control(
             'abc_ele_cf7_submit_button_border_radius',
@@ -589,7 +658,6 @@ class Main extends BaseWidget
      * @access protected
      */
     protected function render()
-
     {
         //load render view to show widget output on frontend/website.
         include 'RenderView.php';
