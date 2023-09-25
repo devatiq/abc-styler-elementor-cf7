@@ -50,7 +50,7 @@ function abcf7_plugin_general_init()
 
     if (is_plugin_active('contact-form-7/wp-contact-form-7.php')) {
         // Load Main plugin class
-        require_once 'includes/main.php';
+        require_once ABC_CF7_STYLER_PLUGIN_DIR . 'includes/Main.php';
         /**
          * Initiate the plugin class
          */
