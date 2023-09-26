@@ -67,3 +67,17 @@
     border-color: #448E08;
     background-color: #FE4D05;
 }
+
+#abc-ele-contact-form-wrapper .wpcf7-list-item {
+    margin-bottom: 10px;
+}
+
+#abc-ele-contact-form-wrapper .wpcf7-list-item label{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+#abc-ele-contact-form-wrapper .wpcf7-form-control.wpcf7-radio .wpcf7-list-item input[type="radio"], #abc-ele-contact-form-wrapper .wpcf7-form-control.wpcf7-checkbox .wpcf7-list-item input[type="checkbox"] {
+    height: auto;
+    margin-top: 0 !important;
+}

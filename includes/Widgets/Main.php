@@ -445,7 +445,7 @@ class Main extends BaseWidget
         $this->start_controls_section(
             'abc_elementor_cf7_radio_style_setting',
             [
-                'label' => __('Radio', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Radio & Checkbox', ABC_CF7_STYLER_TEXT_DOMAIN),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -455,7 +455,7 @@ class Main extends BaseWidget
             [
                 'name' => 'abc_ele_cf7_radio_label_typography',
                 'label' => __('Typography', ABC_CF7_STYLER_TEXT_DOMAIN),
-                'selector' => '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap label',
+                'selector' => '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-list-item-label',
 
             ]
         );
@@ -466,31 +466,46 @@ class Main extends BaseWidget
                 'label' => __('Label Color', ABC_CF7_STYLER_TEXT_DOMAIN),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap label' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-list-item-label' => 'color: {{VALUE}};',
                 ]
             ]
         );
         // contact form 7 radio field label gap
         $this->add_responsive_control(
-            'abc_ele_cf7_radio_label_gap',
+            'abc_ele_cf7_radio_label__item_gap',
             [
-                'label' => __('Gap', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Item Gap', ABC_CF7_STYLER_TEXT_DOMAIN),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap label' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-list-item' => 'margin-bottom: {{SIZE}}{{UNIT}};',
                 ]
             ]
         );
-        // contact form 7 radio size
+        //contact form 7 radio and checkbox label gap
         $this->add_responsive_control(
-            'abc_ele_cf7_radio_size',
+            'abc_ele_cf7_radio_checkbox_label_gap',
             [
-                'label' => __('Size', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Label Gap', ABC_CF7_STYLER_TEXT_DOMAIN),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap label' => 'font-size: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-list-item label' => 'gap: {{SIZE}}{{UNIT}};',
+                ]
+            ]
+        );
+
+        //input size
+        $this->add_responsive_control(
+            'abc_ele_cf7_radio_checkbox_input_size',
+            [
+                'label' => __('Input Size', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px', 'em', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control.wpcf7-checkbox .wpcf7-list-item input[type="checkbox"] ' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control.wpcf7-radio .wpcf7-list-item input[type="radio"]' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control.wpcf7-acceptance .wpcf7-list-item input[type="checkbox"]' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
                 ]
             ]
         );
