@@ -35,12 +35,6 @@ if (!defined('ABC_CF7_STYLER_PLUGIN_BASENAME')) {
     define('ABC_CF7_STYLER_PLUGIN_BASENAME', plugin_basename(__FILE__));
 }
 
-// Define ABC_CF7_STYLER_TEXT_DOMAIN.
-if (!defined('ABC_CF7_STYLER_TEXT_DOMAIN')) {
-    define('ABC_CF7_STYLER_TEXT_DOMAIN', 'abccf7');
-}
-
-
 // abcf7 plugin general init
 function abcf7_plugin_general_init()
 {
@@ -65,9 +59,9 @@ function abcf7_plugin_general_init()
             $url = 'https://wordpress.org/plugins/contact-form-7/';
             $link = sprintf(
                 /* translators: 1: Plugin Name 2: Elementor */
-                esc_html__('"%1$s" requires "%2$s" to be installed and activated.', ABC_CF7_STYLER_TEXT_DOMAIN),
-                '<strong>' . esc_html__('ABC Contact Form 7 Styler for Elementor', ABC_CF7_STYLER_TEXT_DOMAIN) . '</strong>',
-                '<strong><a href="' . $url . '" target="_blank">' . esc_html__('Contact Form 7', ABC_CF7_STYLER_TEXT_DOMAIN) . '</a></strong>'
+                esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'abccf7'),
+                '<strong>' . esc_html__('ABC Styler for Elementor and Contact Form 7', 'abccf7') . '</strong>',
+                '<strong><a href="' . $url . '" target="_blank">' . esc_html__('Contact Form 7', 'abccf7') . '</a></strong>'
             );
 
             echo '<div class="notice notice-warning is-dismissible"><p>';
