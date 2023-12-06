@@ -10,8 +10,8 @@ License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: abccf7
 Domain Path: /languages
-Elementor tested up to: 3.16.3
-Elementor Pro tested up to: 3.16.3
+Elementor tested up to: 3.18
+Elementor Pro tested up to: 3.18
 */
 
 
