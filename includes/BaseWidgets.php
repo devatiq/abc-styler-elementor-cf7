@@ -4,7 +4,7 @@ namespace Inc\Widgets;
 
 use Elementor\Widget_Base;
 
-class BaseWidget extends Widget_base
+class ABCCf7BaseWidget extends Widget_base
 {
     protected $name;
     protected $title;

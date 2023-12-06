@@ -1,12 +1,12 @@
 <?php
 namespace includes\Widgets\ABCCF7;
 
-use Inc\Widgets\BaseWidget;
+use Inc\Widgets\ABCCf7BaseWidget;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
 
-class Main extends BaseWidget
+class Main extends ABCCf7BaseWidget
 {
 
     // define protected variables...
