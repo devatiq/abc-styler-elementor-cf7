@@ -182,7 +182,7 @@ class ABCCF7STYLER {
         $message = sprintf(
             /* translators: 1: Plugin Name 2: Elementor */
             esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'abccf7'),
-            '<strong>' . esc_html__(ABCCF7_NAME, 'abccf7') . '</strong>',
+            '<strong>'. ABCCF7_NAME . '</strong>',
             '<strong>' . esc_html__('Elementor', 'abccf7') . '</strong>'
         );
 
@@ -205,7 +205,7 @@ class ABCCF7STYLER {
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
 			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'abccf7' ),
-			'<strong>' . esc_html__(ABCCF7_NAME, 'abccf7') . '</strong>',
+			'<strong>' . ABCCF7_NAME . '</strong>',
 			'<strong>' . esc_html__( 'Elementor', 'abccf7' ) . '</strong>',
 			 self::MINIMUM_ELEMENTOR_VERSION
 		);
@@ -229,7 +229,7 @@ class ABCCF7STYLER {
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
 			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'abccf7' ),
-			'<strong>' . esc_html__(ABCCF7_NAME, 'abccf7') . '</strong>',
+			'<strong>' . ABCCF7_NAME . '</strong>',
 			'<strong>' . esc_html__( 'PHP', 'abccf7' ) . '</strong>',
 			 self::MINIMUM_PHP_VERSION
 		);
