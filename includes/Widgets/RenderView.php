@@ -26,7 +26,7 @@
              if( !empty( $settings['abc_ele_contact_form_shortcode'] ) ){
                  echo do_shortcode( $shortcode ); 
              }else{
-                 echo '<div class="form_no_select">' .__('Please Select contact form.', ABC_CF7_STYLER_TEXT_DOMAIN). '</div>';
+                 echo '<div class="form_no_select">' .__('Please Select contact form.', 'abccf7'). '</div>';
              }
          ?>
      </div>

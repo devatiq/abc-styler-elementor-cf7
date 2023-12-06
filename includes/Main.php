@@ -115,7 +115,7 @@ class ABCCF7STYLER {
         define( 'ABC_CF7_STYLER_VERSION', $this->version );
         define( 'ABC_CF7_STYLER_MINIMUM_ELEMENTOR_VERSION', self::MINIMUM_ELEMENTOR_VERSION );
         define( 'ABC_CF7_STYLER_MINIMUM_PHP_VERSION', self::MINIMUM_PHP_VERSION );
-        define('ABCCF7_NAME', 'ABC CF7 Styler for Elementor');       
+        define('ABCCF7_NAME', 'ABC Styler for Elementor and Contact Form 7');       
 
      }
 
@@ -181,9 +181,9 @@ class ABCCF7STYLER {
 
         $message = sprintf(
             /* translators: 1: Plugin Name 2: Elementor */
-            esc_html__('"%1$s" requires "%2$s" to be installed and activated.', ABC_CF7_STYLER_TEXT_DOMAIN),
-            '<strong>' . esc_html__(ABCCF7_NAME, ABC_CF7_STYLER_TEXT_DOMAIN) . '</strong>',
-            '<strong>' . esc_html__('Elementor', ABC_CF7_STYLER_TEXT_DOMAIN) . '</strong>'
+            esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'abccf7'),
+            '<strong>' . esc_html__(ABCCF7_NAME, 'abccf7') . '</strong>',
+            '<strong>' . esc_html__('Elementor', 'abccf7') . '</strong>'
         );
 
         printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message);
@@ -204,9 +204,9 @@ class ABCCF7STYLER {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', ABC_CF7_STYLER_TEXT_DOMAIN ),
-			'<strong>' . esc_html__(ABCCF7_NAME, ABC_CF7_STYLER_TEXT_DOMAIN) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', ABC_CF7_STYLER_TEXT_DOMAIN ) . '</strong>',
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'abccf7' ),
+			'<strong>' . esc_html__(ABCCF7_NAME, 'abccf7') . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'abccf7' ) . '</strong>',
 			 self::MINIMUM_ELEMENTOR_VERSION
 		);
 
@@ -228,9 +228,9 @@ class ABCCF7STYLER {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', ABC_CF7_STYLER_TEXT_DOMAIN ),
-			'<strong>' . esc_html__(ABCCF7_NAME, ABC_CF7_STYLER_TEXT_DOMAIN) . '</strong>',
-			'<strong>' . esc_html__( 'PHP', ABC_CF7_STYLER_TEXT_DOMAIN ) . '</strong>',
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'abccf7' ),
+			'<strong>' . esc_html__(ABCCF7_NAME, 'abccf7') . '</strong>',
+			'<strong>' . esc_html__( 'PHP', 'abccf7' ) . '</strong>',
 			 self::MINIMUM_PHP_VERSION
 		);
 
@@ -277,7 +277,7 @@ class ABCCF7STYLER {
             update_option('ABCCF7_installed', time());
         }
 
-        update_option('ABCCF7_installed', ABC_CF7_STYLER_TEXT_DOMAIN);
+        update_option('ABCCF7_installed', 'abccf7');
     }
 
     /**

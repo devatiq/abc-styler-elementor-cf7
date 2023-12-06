@@ -46,7 +46,7 @@ class Main extends BaseWidget
                 $formlist[$form->ID] = $form->post_title;
             }
         } else {
-            $formlist['0'] = esc_html__('Form not found', ABC_CF7_STYLER_TEXT_DOMAIN);
+            $formlist['0'] = esc_html__('Form not found', 'abccf7');
         }
         return $formlist;
     }
@@ -66,7 +66,7 @@ class Main extends BaseWidget
         $this->start_controls_section(
             'abc_elementor_contact_form_setting',
             [
-                'label' => __('Contact Form 7 Setting', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Contact Form 7 Setting', 'abccf7'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -75,7 +75,7 @@ class Main extends BaseWidget
         $this->add_control(
             'abc_ele_contact_form_shortcode',
             [
-                'label' => __('Select Form', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Select Form', 'abccf7'),
                 'type' => Controls_Manager::SELECT,
                 'options' => $this->get_contact_form_shortcodes(),
             ]
@@ -88,7 +88,7 @@ class Main extends BaseWidget
         $this->start_controls_section(
             'abc_elementor_cf7_input_style_setting',
             [
-                'label' => __('Input', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Input', 'abccf7'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -97,7 +97,7 @@ class Main extends BaseWidget
             Group_Control_Typography::get_type(),
             [
                 'name' => 'abc_ele_cf7_label_typography',
-                'label' => __('Label Typography', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Label Typography', 'abccf7'),
                 'selector' => '{{WRAPPER}} #abc-ele-contact-form-wrapper form label',
             ]
         );
@@ -105,7 +105,7 @@ class Main extends BaseWidget
         $this->add_control(
             'abc_ele_cf7_label_text_color',
             [
-                'label' => __('Label Text Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Label Text Color', 'abccf7'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} #abc-ele-contact-form-wrapper form label' => 'color: {{VALUE}};',
@@ -116,7 +116,7 @@ class Main extends BaseWidget
         $this->add_responsive_control(
             'abc_ele_cf7_input_gap',
             [
-                'label' => __('Input Gap', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Input Gap', 'abccf7'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -138,7 +138,7 @@ class Main extends BaseWidget
         $this->add_responsive_control(
             'abc_ele_cf7_input_height',
             [
-                'label' => __('Height', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Height', 'abccf7'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'range' => [
@@ -164,7 +164,7 @@ class Main extends BaseWidget
         $this->add_responsive_control(
             'abc_ele_cf7_input_width',
             [
-                'label' => __('Width', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Width', 'abccf7'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'range' => [
@@ -191,7 +191,7 @@ class Main extends BaseWidget
             Group_Control_Border::get_type(),
             [
                 'name' => 'abc_ele_cf7_input_border',
-                'label' => __('Border', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Border', 'abccf7'),
                 'selector' => '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap input',
             ]
         );
@@ -199,7 +199,7 @@ class Main extends BaseWidget
         $this->add_responsive_control(
             'abc_ele_cf7_input_border_radius',
             [
-                'label' => __('Border Radius', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Border Radius', 'abccf7'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -211,7 +211,7 @@ class Main extends BaseWidget
         $this->add_responsive_control(
             'abc_ele_cf7_input_padding',
             [
-                'label' => __('Padding', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Padding', 'abccf7'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -223,7 +223,7 @@ class Main extends BaseWidget
         $this->add_responsive_control(
             'abc_ele_cf7_input_margin',
             [
-                'label' => __('Margin', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Margin', 'abccf7'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -235,7 +235,7 @@ class Main extends BaseWidget
         $this->add_control(
             'abc_ele_cf7_input_text_color',
             [
-                'label' => __('Text Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Text Color', 'abccf7'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap input' => 'color: {{VALUE}};',
@@ -246,7 +246,7 @@ class Main extends BaseWidget
         $this->add_control(
             'abc_ele_cf7_input_bg_color',
             [
-                'label' => __('Background Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Background Color', 'abccf7'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap input' => 'background-color: {{VALUE}};',
@@ -257,7 +257,7 @@ class Main extends BaseWidget
         $this->add_control(
             'abc_ele_cf7_input_placeholder_color',
             [
-                'label' => __('Placeholder Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Placeholder Color', 'abccf7'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap input::-webkit-input-placeholder' => 'color: {{VALUE}};',
@@ -271,7 +271,7 @@ class Main extends BaseWidget
         $this->add_control(
             'abc_ele_cf7_input_focus_text_color',
             [
-                'label' => __('Focus Text Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Focus Text Color', 'abccf7'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}}  #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap input:focus' => 'color: {{VALUE}};',
@@ -282,7 +282,7 @@ class Main extends BaseWidget
         $this->add_control(
             'abc_ele_cf7_input_focus_bg_color',
             [
-                'label' => __('Focus Background Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Focus Background Color', 'abccf7'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}}  #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap input:focus' => 'background-color: {{VALUE}};',
@@ -297,7 +297,7 @@ class Main extends BaseWidget
         $this->start_controls_section(
             'abc_elementor_cf7_textarea_style_setting',
             [
-                'label' => __('Textarea', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Textarea', 'abccf7'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -305,7 +305,7 @@ class Main extends BaseWidget
         $this->add_responsive_control(
             'abc_ele_cf7_textarea_height',
             [
-                'label' => __('Height', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Height', 'abccf7'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'range' => [
@@ -331,7 +331,7 @@ class Main extends BaseWidget
         $this->add_responsive_control(
             'abc_ele_cf7_textarea_width',
             [
-                'label' => __('Width', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Width', 'abccf7'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'range' => [
@@ -358,7 +358,7 @@ class Main extends BaseWidget
             Group_Control_Border::get_type(),
             [
                 'name' => 'abc_ele_cf7_textarea_border',
-                'label' => __('Border', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Border', 'abccf7'),
                 'selector' => '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap textarea',
             ]
         );
@@ -366,7 +366,7 @@ class Main extends BaseWidget
         $this->add_responsive_control(
             'abc_ele_cf7_textarea_border_radius',
             [
-                'label' => __('Border Radius', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Border Radius', 'abccf7'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -378,7 +378,7 @@ class Main extends BaseWidget
         $this->add_responsive_control(
             'abc_ele_cf7_textarea_padding',
             [
-                'label' => __('Padding', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Padding', 'abccf7'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -390,7 +390,7 @@ class Main extends BaseWidget
         $this->add_responsive_control(
             'abc_ele_cf7_textarea_margin',
             [
-                'label' => __('Margin', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Margin', 'abccf7'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -402,7 +402,7 @@ class Main extends BaseWidget
         $this->add_control(
             'abc_ele_cf7_textarea_text_color',
             [
-                'label' => __('Text Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Text Color', 'abccf7'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap textarea' => 'color: {{VALUE}};',
@@ -413,7 +413,7 @@ class Main extends BaseWidget
         $this->add_control(
             'abc_ele_cf7_textarea_bg_color',
             [
-                'label' => __('Background Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Background Color', 'abccf7'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap textarea' => 'background-color: {{VALUE}};',
@@ -424,7 +424,7 @@ class Main extends BaseWidget
         $this->add_control(
             'abc_ele_cf7_textarea_placeholder_color',
             [
-                'label' => __('Placeholder Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Placeholder Color', 'abccf7'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}}  #abc-ele-contact-form-wrapper .wpcf7-form-control-wrap textarea::-webkit-input-placeholder' => 'color: {{VALUE}};',
@@ -445,7 +445,7 @@ class Main extends BaseWidget
         $this->start_controls_section(
             'abc_elementor_cf7_radio_style_setting',
             [
-                'label' => __('Radio & Checkbox', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Radio & Checkbox', 'abccf7'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -454,7 +454,7 @@ class Main extends BaseWidget
             Group_Control_Typography::get_type(),
             [
                 'name' => 'abc_ele_cf7_radio_label_typography',
-                'label' => __('Typography', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Typography', 'abccf7'),
                 'selector' => '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-list-item-label',
 
             ]
@@ -463,7 +463,7 @@ class Main extends BaseWidget
         $this->add_control(
             'abc_ele_cf7_radio_label_color',
             [
-                'label' => __('Label Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Label Color', 'abccf7'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} #abc-ele-contact-form-wrapper .wpcf7-list-item-label' => 'color: {{VALUE}};',
@@ -474,7 +474,7 @@ class Main extends BaseWidget
         $this->add_responsive_control(
             'abc_ele_cf7_radio_label__item_gap',
             [
-                'label' => __('Item Gap', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Item Gap', 'abccf7'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -486,7 +486,7 @@ class Main extends BaseWidget
         $this->add_responsive_control(
             'abc_ele_cf7_radio_checkbox_label_gap',
             [
-                'label' => __('Label Gap', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Label Gap', 'abccf7'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -499,7 +499,7 @@ class Main extends BaseWidget
         $this->add_responsive_control(
             'abc_ele_cf7_radio_checkbox_input_size',
             [
-                'label' => __('Input Size', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Input Size', 'abccf7'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -518,7 +518,7 @@ class Main extends BaseWidget
         $this->start_controls_section(
             'abc_elementor_cf7_submit_button_style_setting',
             [
-                'label' => __('Submit Button', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Submit Button', 'abccf7'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -526,19 +526,19 @@ class Main extends BaseWidget
         $this->add_responsive_control(
             'abc_ele_cf7_submit_button_alignment',
             [
-                'label' => __('Alignment', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Alignment', 'abccf7'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', ABC_CF7_STYLER_TEXT_DOMAIN),
+                        'title' => __('Left', 'abccf7'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', ABC_CF7_STYLER_TEXT_DOMAIN),
+                        'title' => __('Center', 'abccf7'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', ABC_CF7_STYLER_TEXT_DOMAIN),
+                        'title' => __('Right', 'abccf7'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -553,7 +553,7 @@ class Main extends BaseWidget
             Group_Control_Typography::get_type(),
             [
                 'name' => 'abc_ele_cf7_submit_button_typography',
-                'label' => __('Typography', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Typography', 'abccf7'),
                 'selector' => '{{WRAPPER}} #abc-ele-contact-form-wrapper input[type="submit"].wpcf7-form-control.wpcf7-submit',
             ]
         );
@@ -562,7 +562,7 @@ class Main extends BaseWidget
         $this->add_responsive_control(
             'abc_ele_cf7_submit_button_padding',
             [
-                'label' => __('Padding', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Padding', 'abccf7'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -574,7 +574,7 @@ class Main extends BaseWidget
         $this->add_responsive_control(
             'abc_ele_cf7_submit_button_margin',
             [
-                'label' => __('Margin', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Margin', 'abccf7'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -586,7 +586,7 @@ class Main extends BaseWidget
         $this->add_control(
             'abc_ele_cf7_submit_button_text_color',
             [
-                'label' => __('Text Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Text Color', 'abccf7'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} #abc-ele-contact-form-wrapper input[type="submit"].wpcf7-form-control.wpcf7-submit' => 'color: {{VALUE}};',
@@ -597,7 +597,7 @@ class Main extends BaseWidget
         $this->add_control(
             'abc_ele_cf7_submit_button_bg_color',
             [
-                'label' => __('Background Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Background Color', 'abccf7'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} #abc-ele-contact-form-wrapper input[type="submit"].wpcf7-form-control.wpcf7-submit' => 'background-color: {{VALUE}};',
@@ -609,7 +609,7 @@ class Main extends BaseWidget
             Group_Control_Border::get_type(),
             [
                 'name' => 'abc_ele_cf7_submit_button_border',
-                'label' => __('Border', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Border', 'abccf7'),
                 'selector' => '{{WRAPPER}} #abc-ele-contact-form-wrapper input[type="submit"].wpcf7-form-control.wpcf7-submit',
             ]
         );
@@ -617,7 +617,7 @@ class Main extends BaseWidget
         $this->add_responsive_control(
             'abc_ele_cf7_submit_button_border_radius',
             [
-                'label' => __('Border Radius', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Border Radius', 'abccf7'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -629,7 +629,7 @@ class Main extends BaseWidget
         $this->add_control(
             'abc_ele_cf7_submit_button_hover_text_color',
             [
-                'label' => __('Hover Text Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Hover Text Color', 'abccf7'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} #abc-ele-contact-form-wrapper input[type="submit"].wpcf7-form-control.wpcf7-submit:hover' => 'color: {{VALUE}};',
@@ -640,7 +640,7 @@ class Main extends BaseWidget
         $this->add_control(
             'abc_ele_cf7_submit_button_hover_bg_color',
             [
-                'label' => __('Hover Background Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Hover Background Color', 'abccf7'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} #abc-ele-contact-form-wrapper input[type="submit"].wpcf7-form-control.wpcf7-submit:hover' => 'background-color: {{VALUE}};',
@@ -651,7 +651,7 @@ class Main extends BaseWidget
         $this->add_control(
             'abc_ele_cf7_submit_button_hover_border_color',
             [
-                'label' => __('Hover Border Color', ABC_CF7_STYLER_TEXT_DOMAIN),
+                'label' => __('Hover Border Color', 'abccf7'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} #abc-ele-contact-form-wrapper input[type="submit"].wpcf7-form-control.wpcf7-submit:hover' => 'border-color: {{VALUE}};',

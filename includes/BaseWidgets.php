@@ -24,7 +24,7 @@ class BaseWidget extends Widget_base
 
     public function get_title()
     {
-        return __($this->title, ABC_CF7_STYLER_TEXT_DOMAIN);
+        return __($this->title, 'abccf7');
     }
 
     public function get_icon()
